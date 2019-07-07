@@ -1,0 +1,20 @@
+{
+  "name": "bold-subscriptions-storefront-js",
+  "version": "1.0.0",
+  "description": "This Javascript API makes it possible to easily add subscriptions to the cart, display line item properties and navigate to the Bold Subscriptions or Cashier checkout.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "bold",
+    "subscriptions",
+    "storefront",
+    "js",
+    "javascript",
+    "api",
+    "Shopify"
+  ],
+  "author": "Morgan Wowk <morgan.wowk@gmail.com>",
+  "license": "MIT"
+}
