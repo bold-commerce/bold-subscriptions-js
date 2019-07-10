@@ -4,7 +4,8 @@
   "description": "This Javascript API makes it possible to easily add subscriptions to the cart, display line item properties and navigate to the Bold Subscriptions or Cashier checkout.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack",
+    "test": "jest --verbose"
   },
   "keywords": [
     "bold",
@@ -16,5 +17,19 @@
     "Shopify"
   ],
   "author": "Morgan Wowk <morgan.wowk@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "browserslist": [
+    "last 1 version",
+    "> 1%",
+    "IE 10"
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.5.4",
+    "@babel/preset-env": "^7.5.4",
+    "babel-jest": "^24.8.0",
+    "babel-loader": "^8.0.6",
+    "jest": "^24.8.0",
+    "webpack": "^4.35.3",
+    "webpack-cli": "^3.3.5"
+  }
 }

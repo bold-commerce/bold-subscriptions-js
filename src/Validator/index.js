@@ -1,39 +1,45 @@
 export default class Validator {
     static expectOptions(caller, options, expectedOptions, asProperties = false) {
-        const difference = Object.keys(options).filter(
-            x => asProperties
-                ? !(expectedOptions.map(y => `properties[${y}]`).includes(x))
-                : !expectedOptions.includes(x)
+        const difference = expectedOptions.filter(x => asProperties
+            ? !options.properties || typeof options.properties[x] === 'undefined'
+            : !Object.keys(options).includes(x)
         );
         if (difference.length > 0) {
-            console.error(`Missing expected options for function ${caller.name}: ${JSON.stringify(difference)}`);
-            return false;
+            return new Error(`Missing expected options for function ${caller}: ${JSON.stringify(
+                asProperties
+                    ? difference.map(x => `properties.${x}`)
+                    : difference
+            )}`);
         }
         return true;
     }
 
-    static expectShopifyOptions(options) {
-        return Object.keys(options).includes('id');
+    static expectShopifyOptions(caller, options) {
+        if (Object.keys(options).includes('id')) {
+            return true;
+        }
+
+        return new Error(`Missing expected options for function ${caller}: ${JSON.stringify(['id'])}`);
     }
 
-    static expectClickEventWithinForm(e) {
+    static expectClickEventWithinForm(caller ,e) {
         const target = e.currentTarget;
 
         if (e.type !== 'click' || !target.form) {
-            console.error(`${this.name} should be bound as a click event on a button contained within a form.`);
-            return false;
+            return new Error(`${caller} should be bound as a click event on a button contained within a form.`);
         }
 
         return true;
     }
 
     static expectFormData(caller, formData, expectedFormData) {
-        const difference = formData.keys().filter(
-            x => !expectedFormData.includes(x)
+        const keys = Array.from(formData.keys());
+        const difference = expectedFormData.filter(
+            x => !keys.includes(x)
         );
+
         if (difference.length > 0) {
-            console.error(`Missing expected form data for function ${caller.name}: ${JSON.stringify(difference)}`);
-            return false;
+            return new Error(`Missing expected form data for function ${caller}: ${JSON.stringify(difference)}`);
         }
         return true;
     }
