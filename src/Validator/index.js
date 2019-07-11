@@ -32,7 +32,11 @@ export default class Validator {
         return true;
     }
 
-    static expectFormData(caller, formData, expectedFormData) {
+    static expectFormData(caller, formData, expectedFormData, asProperties = false) {
+        if (asProperties) {
+            expectedFormData = expectedFormData.map(x => `properties[${x}]`);
+        }
+
         const keys = Array.from(formData.keys());
         const difference = expectedFormData.filter(
             x => !keys.includes(x)
@@ -40,6 +44,13 @@ export default class Validator {
 
         if (difference.length > 0) {
             return new Error(`Missing expected form data for function ${caller}: ${JSON.stringify(difference)}`);
+        }
+        return true;
+    }
+
+    static expectShopifyFormData(caller, formData) {
+        if (!formData.has('id')) {
+            return new Error(`Missing expected form data for function ${caller}: ${JSON.stringify(['id'])}`);
         }
         return true;
     }
