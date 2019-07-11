@@ -22,5 +22,9 @@ export function directlyToCheckout(e, isLimitedLength = false) {
 }
 
 export function directlyToCheckoutCashier(e, isLimitedLength = false) {
-    // TODO: Implement directlyToCheckoutCashier()
+    if (isLimitedLength) {
+        return limitedLength.directlyToCheckoutCashier(e);
+    }
+
+    return standard.directlyToCheckoutCashier(e);
 }
