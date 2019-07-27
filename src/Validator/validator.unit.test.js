@@ -82,8 +82,8 @@ test('expectFormData passes with valid form data', () => {
     formData.append('frequency_type', 3);
     formData.append('frequency_type_text', 'Every 1 Month(s)');
     formData.append('quantities[]', 1);
-    formData.append('variant_ids[]', 12345678);
-    formData.append('product_ids[]', 87654321);
+    formData.append('variant_id[]', 12345678);
+    formData.append('product_id[]', 87654321);
 
     const result = I.expectFormData('test', formData, STANDARD_SUBSCRIPTION_CHECKOUT_EXPECTED_OPTIONS);
 
@@ -95,8 +95,8 @@ test('expectFormData fails for missing form data', () => {
     formData.append('frequency_type', 3);
     formData.append('frequency_type_text', 'Every 1 Month(s)');
     formData.append('quantities[]', 1);
-    formData.append('variant_ids[]', 12345678);
-    formData.append('product_ids[]', 87654321);
+    formData.append('variant_id[]', 12345678);
+    formData.append('product_id[]', 87654321);
 
     const result = I.expectFormData('test', formData, STANDARD_SUBSCRIPTION_CHECKOUT_EXPECTED_OPTIONS);
 
