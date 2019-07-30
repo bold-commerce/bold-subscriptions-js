@@ -1,6 +1,6 @@
 {
   "name": "@boldcommerce/bold-subscriptions-js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This Javascript API makes it easy to add subscriptions to the cart and navigate to the Bold Subscriptions or Cashier checkout.",
   "main": "dist/es-bundle.js",
   "unpkg": "dist/bold-subscriptions-js.min.js",
