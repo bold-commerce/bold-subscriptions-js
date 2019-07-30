@@ -1,3 +1,3 @@
-export * as WidgetAPI from './BoldApi';
-export * as BoldCart from './BoldCart';
-export * as BoldCheckout from './BoldCheckout';
+export * as widgetAPI from './BoldApi';
+export * as cart from './BoldCart';
+export * as checkout from './BoldCheckout';
