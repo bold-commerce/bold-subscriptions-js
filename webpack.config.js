@@ -3,7 +3,7 @@ const path = require('path');
 module.exports = {
     entry: './src/cdn.js',
     output: {
-        filename: 'bundle.js',
+        filename: 'bold-subscriptions-js.min.js',
         path: path.resolve(__dirname, 'dist')
     },
     mode: 'production',
