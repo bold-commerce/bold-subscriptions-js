@@ -44,7 +44,7 @@ cart.standard.addToCart({
 		'group_id': 1234,
 		'frequency_num': 1,
 		'frequency_type': 3,
-        'frequency_type_text': 'Every 1 Month(s)',
+		'frequency_type_text': 'Every 1 Month(s)',
     }
 })
     .then(() => alert('Successfully added!'));
