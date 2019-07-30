@@ -1,9 +1,9 @@
 const path = require('path');
 
 module.exports = {
-    entry: './src/index.js',
+    entry: './src/cdn.js',
     output: {
-        filename: 'es-bundle.js',
+        filename: 'bold-subscriptions-js.min.js',
         path: path.resolve(__dirname, 'dist')
     },
     mode: 'production',
@@ -14,8 +14,10 @@ module.exports = {
                 include: [
                     path.resolve(__dirname, 'src')
                 ],
-                type: 'javascript/esm',
-                exclude: /node_modules/
+                loader: 'babel-loader',
+                options: {
+                    presets: ['@babel/preset-env']
+                },
             }
         ]
     }

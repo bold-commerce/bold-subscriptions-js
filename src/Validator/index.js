@@ -1,4 +1,4 @@
-export default class Validator {
+class Validator {
     static expectOptions(caller, options, expectedOptions, asProperties = false) {
         const difference = expectedOptions.filter(x => asProperties
             ? !options.properties || typeof options.properties[x] === 'undefined'
@@ -55,3 +55,5 @@ export default class Validator {
         return true;
     }
 }
+
+export default Validator;

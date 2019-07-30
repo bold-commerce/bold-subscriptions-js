@@ -3,7 +3,7 @@ import { getShopifyDomain } from '../../helpers';
 /**
  * @param groupId
  */
-export function getGroupInfo(groupId) {
+function getGroupInfo(groupId) {
     fetch(
         `https://ro.boldapps.net/api/widget/group/${groupId}?shop=${getShopifyDomain()}&ts=${Date.now()}`,
         {
@@ -15,3 +15,7 @@ export function getGroupInfo(groupId) {
     )
         .then(data => data.json());
 }
+
+export {
+    getGroupInfo,
+};

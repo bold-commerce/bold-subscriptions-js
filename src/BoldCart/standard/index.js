@@ -2,7 +2,7 @@ import { default as I } from '../../Validator';
 import { STANDARD_SUBSCRIPTION_EXPECTED_OPTIONS, STANDARD_SUBSCRIPTION_CHECKOUT_EXPECTED_OPTIONS } from '../../constants';
 import { getShopifyDomain, getShopifyHandleFromDomain } from '../../helpers';
 
-export async function addToCart(options, expectedOptions = STANDARD_SUBSCRIPTION_EXPECTED_OPTIONS) {
+async function addToCart(options, expectedOptions = STANDARD_SUBSCRIPTION_EXPECTED_OPTIONS) {
     let result = I.expectOptions('addToCart', options, expectedOptions, true);
     if (result instanceof Error) {
         throw result;
@@ -24,11 +24,11 @@ export async function addToCart(options, expectedOptions = STANDARD_SUBSCRIPTION
     });
 }
 
-export async function addToCartCashier(options) {
+async function addToCartCashier(options) {
     return addToCart(options);
 }
 
-export function directlyToCheckout(e, expectedFormData = STANDARD_SUBSCRIPTION_CHECKOUT_EXPECTED_OPTIONS) {
+function directlyToCheckout(e, expectedFormData = STANDARD_SUBSCRIPTION_CHECKOUT_EXPECTED_OPTIONS) {
     let result = I.expectClickEventWithinForm('directlyToCheckout', e);
     if (result instanceof Error) {
         throw result;
@@ -52,7 +52,7 @@ export function directlyToCheckout(e, expectedFormData = STANDARD_SUBSCRIPTION_C
     form.submit();
 }
 
-export function directlyToCheckoutCashier(e, expectedFormData = STANDARD_SUBSCRIPTION_EXPECTED_OPTIONS) {
+function directlyToCheckoutCashier(e, expectedFormData = STANDARD_SUBSCRIPTION_EXPECTED_OPTIONS) {
     expectedFormData = [
         ...expectedFormData,
         '_ro_single_product_recurring_item',
@@ -134,3 +134,10 @@ export function directlyToCheckoutCashier(e, expectedFormData = STANDARD_SUBSCRI
             cashierForm.submit();
         });
 }
+
+export {
+    addToCart,
+    addToCartCashier,
+    directlyToCheckout,
+    directlyToCheckoutCashier,
+};

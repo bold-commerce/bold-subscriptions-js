@@ -1,7 +1,7 @@
 import * as standard from '../standard';
 import * as limitedLength from '../limitedLength';
 
-export async function addToCart(options, isLimitedLength = false) {
+async function addToCart(options, isLimitedLength = false) {
     if (isLimitedLength) {
         return limitedLength.addToCart(options);
     }
@@ -9,11 +9,11 @@ export async function addToCart(options, isLimitedLength = false) {
     return standard.addToCart(options);
 }
 
-export async function addToCartCashier(options, isLimitedLength = false) {
+async function addToCartCashier(options, isLimitedLength = false) {
     return addToCart(options, isLimitedLength);
 }
 
-export function directlyToCheckout(e, isLimitedLength = false) {
+function directlyToCheckout(e, isLimitedLength = false) {
     if (isLimitedLength) {
         return limitedLength.directlyToCheckout(e);
     }
@@ -21,10 +21,18 @@ export function directlyToCheckout(e, isLimitedLength = false) {
     return standard.directlyToCheckout(e);
 }
 
-export function directlyToCheckoutCashier(e, isLimitedLength = false) {
+function directlyToCheckoutCashier(e, isLimitedLength = false) {
     if (isLimitedLength) {
         return limitedLength.directlyToCheckoutCashier(e);
     }
 
     return standard.directlyToCheckoutCashier(e);
 }
+
+
+export {
+    addToCart,
+    addToCartCashier,
+    directlyToCheckout,
+    directlyToCheckoutCashier,
+};
