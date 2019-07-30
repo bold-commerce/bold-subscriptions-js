@@ -37,7 +37,7 @@ To view our full documentation on the available methods head over to our [BoldSu
 ### Example Node.js usage
 
 ```javascript
-import { cart } from 'bold-subscriptions-js';
+import { cart } from '@boldcommerce/bold-subscriptions-js';
 cart.standard.addToCart({
 	'id': 1250183643165,
 	properties: {
