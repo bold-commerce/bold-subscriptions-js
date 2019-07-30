@@ -1,5 +1,5 @@
 {
-  "name": "bold-subscriptions-storefront-js",
+  "name": "@boldcommerce/bold-subscriptions-js",
   "version": "1.0.0",
   "description": "This Javascript API makes it easy to add subscriptions to the cart and navigate to the Bold Subscriptions or Cashier checkout.",
   "main": "dist/es-bundle.js",
@@ -26,7 +26,7 @@
     "api",
     "Shopify"
   ],
-  "author": "Morgan Wowk <morgan.wowk@gmail.com>",
+  "author": "Morgan Wowk <morgan@boldcommerce.com>",
   "license": "MIT",
   "browserslist": [
     "last 1 version",
