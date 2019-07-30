@@ -72,4 +72,4 @@ This project is read only. Please contact [Bold Commerce](https://boldcommerce.c
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/bold-commerce/bold-subscriptions-js/blob/master/LICENSE.md) file for details.
