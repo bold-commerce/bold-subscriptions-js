@@ -2,7 +2,7 @@ import { getShopifyDomain, getShopifyHandleFromDomain } from '../helpers';
 import { default as I } from '../Validator';
 import { removeProductDescriptionsFromCart } from '../helpers';
 
-export function goToCheckout(e) {
+function goToCheckout(e) {
     let result = I.expectClickEventWithinForm('goToCheckout', e);
     if (result instanceof Error) {
         throw result;
@@ -40,7 +40,7 @@ export function goToCheckout(e) {
         });
 }
 
-export function goToCheckoutCashier(e) {
+function goToCheckoutCashier(e) {
     let result = I.expectClickEventWithinForm('goToCheckout', e);
     if (result instanceof Error) {
         throw result;
@@ -82,3 +82,9 @@ export function goToCheckoutCashier(e) {
             cashierForm.submit();
         });
 }
+
+
+export {
+    goToCheckout,
+    goToCheckoutCashier,
+};

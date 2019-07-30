@@ -1,11 +1,21 @@
 {
   "name": "bold-subscriptions-storefront-js",
   "version": "1.0.0",
-  "description": "This Javascript API makes it possible to easily add subscriptions to the cart and navigate to the Bold Subscriptions or Cashier checkout.",
-  "main": "src/index.js",
+  "description": "This Javascript API makes it easy to add subscriptions to the cart and navigate to the Bold Subscriptions or Cashier checkout.",
+  "main": "dist/es-bundle.js",
+  "unpkg": "dist/bold-subscriptions-js.min.js",
+  "files": [
+    "src/index.js",
+    "dist/bold-subscriptions-js.min.js"
+  ],
+  "engines": {
+    "node": ">=7.8.0"
+  },
   "scripts": {
     "build": "webpack",
-    "test": "jest --verbose"
+    "build-cdn": "webpack --config webpack.cdn.config.js",
+    "test": "jest --verbose",
+    "prepublish": "yarn test && yarn build && yarn build-cdn"
   },
   "keywords": [
     "bold",
