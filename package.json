@@ -5,7 +5,7 @@
   "main": "dist/es-bundle.js",
   "unpkg": "dist/bold-subscriptions-js.min.js",
   "files": [
-    "src/index.js",
+    "dist/es-bundle.js",
     "dist/bold-subscriptions-js.min.js"
   ],
   "engines": {
