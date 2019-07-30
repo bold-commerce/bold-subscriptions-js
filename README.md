@@ -27,7 +27,7 @@ $ yarn add bold-subscriptions-js
 Using CDN:
 
 ```html
-<script src="https://unpkg.com/bold-subscriptions-js/dist/bold-subscriptions-js.min.js"></script>
+<script src="https://unpkg.com/@boldcommerce/bold-subscriptions-js"></script>
 ```
 
 ## API Reference
