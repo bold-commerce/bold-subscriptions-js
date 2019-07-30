@@ -45,9 +45,9 @@ cart.standard.addToCart({
 		'frequency_num': 1,
 		'frequency_type': 3,
 		'frequency_type_text': 'Every 1 Month(s)',
-    }
+	}
 })
-    .then(() => alert('Successfully added!'));
+	.then(() => alert('Successfully added!'));
 ```
 
 
@@ -55,14 +55,14 @@ cart.standard.addToCart({
 
 ```html
 <form>
-    <input type="hidden" name="group_id" value="1234">
-    <input type="hidden" name="frequency_num" value="1">
-    <input type="hidden" name="frequency_type" value="3">
-    <input type="hidden" name="frequency_type_text" value="Every 1 Month(s)">
-    <input type="hidden" name="quantities[]" value="1">
-    <input type="hidden" name="variant_id[]" value="1250183643165">
-    <input type="hidden" name="product_id[]" value="103180140573">
-    <button onclick="BoldSubscriptions.cart.standard.directlyToCheckout(event)">Checkout</button>
+	<input type="hidden" name="group_id" value="1234">
+	<input type="hidden" name="frequency_num" value="1">
+	<input type="hidden" name="frequency_type" value="3">
+	<input type="hidden" name="frequency_type_text" value="Every 1 Month(s)">
+	<input type="hidden" name="quantities[]" value="1">
+	<input type="hidden" name="variant_id[]" value="1250183643165">
+	<input type="hidden" name="product_id[]" value="103180140573">
+	<button onclick="BoldSubscriptions.cart.standard.directlyToCheckout(event)">Checkout</button>
 </form>
 ```
 
