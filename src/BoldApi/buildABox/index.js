@@ -16,4 +16,3 @@ export function getSlots(groupId, bid = null) {
     )
         .then(data => data.json());
 }
-}
