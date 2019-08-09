@@ -5,7 +5,7 @@ import { getShopifyDomain } from '../../helpers';
  */
 function getGroupInfo(groupId) {
     return fetch(
-        `https://ro.boldapps.net/api/widget/group/${groupId}?shop=${getShopifyDomain()}&ts=${Date.now()}`,
+        `https://ro.boldapps.net/api/widget/group/${groupId}.json?shop=${getShopifyDomain()}&ts=${Date.now()}`,
         {
             method: 'GET',
             mode: 'cors',
