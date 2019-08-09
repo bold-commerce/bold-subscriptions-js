@@ -5,7 +5,7 @@ import { getShopifyDomain } from '../../helpers';
  * @param {?number=} bid
  */
 function getSlots(groupId, bid = null) {
-    fetch(
+    return fetch(
         `https://ro.boldapps.net/api/widget/group/${groupId}/build_a_box/slots?shop=${getShopifyDomain()}${bid?`&bid=${bid}`:''}&ts=${Date.now()}`,
         {
             method: 'GET',
