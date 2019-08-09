@@ -23,7 +23,7 @@ class Validator {
     }
 
     static expectClickEventWithinForm(caller ,e) {
-        const target = e.currentTarget;
+        const target = e.target;
 
         if (e.type !== 'click' || !target.form) {
             return new Error(`${caller} should be bound as a click event on a button contained within a form.`);

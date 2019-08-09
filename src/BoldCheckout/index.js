@@ -8,7 +8,7 @@ function goToCheckout(e) {
         throw result;
     }
 
-    const target = e.currentTarget;
+    const target = e.target;
     const form = target.form;
 
     fetch(

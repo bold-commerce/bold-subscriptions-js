@@ -36,7 +36,7 @@ function directlyToCheckout(e, expectedFormData = STANDARD_SUBSCRIPTION_CHECKOUT
 
     e.preventDefault();
 
-    const target = e.currentTarget;
+    const target = e.target;
     const form = target.form;
     const formData = new FormData(form);
 
@@ -65,7 +65,7 @@ function directlyToCheckoutCashier(e, expectedFormData = STANDARD_SUBSCRIPTION_E
 
     e.preventDefault();
 
-    const target = e.currentTarget;
+    const target = e.target;
     const form = target.form;
     const formData = new FormData(form);
 
