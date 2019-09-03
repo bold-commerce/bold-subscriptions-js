@@ -15,13 +15,13 @@ Latest ✔ | Latest ✔ | Latest ✔ | Latest ✔ | Latest ✔ | 11 ✔ |
 Using npm:
 
 ```shell
-$ npm install bold-subscriptions-js
+$ npm install @boldcommerce/bold-subscriptions-js
 ```
 
 Using yarn:
 
 ```shell
-$ yarn add bold-subscriptions-js
+$ yarn add @boldcommerce/bold-subscriptions-js
 ```
 
 Using CDN:
