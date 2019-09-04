@@ -3,7 +3,7 @@ function getShopifyDomain() {
         return `${window.myshopifyDomain}`;
     }
     if (window.Shopify && window.Shopify.shop) {
-        return `${window.Shopify.shop}`;
+        return `${window.location.host}`;
     }
 
     throw new Error('Missing myshopify domain for Bold Subscriptions Javascript library. To resolve this issue define the window variable myshopifyDomain before executing this code.');
