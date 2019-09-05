@@ -3,10 +3,21 @@ function getShopifyDomain() {
         return `${window.myshopifyDomain}`;
     }
     if (window.Shopify && window.Shopify.shop) {
-        return `${window.location.host}`;
+        return `${window.Shopify.shop}`;
     }
 
     throw new Error('Missing myshopify domain for Bold Subscriptions Javascript library. To resolve this issue define the window variable myshopifyDomain before executing this code.');
+}
+
+function getPrimaryDomain() {
+    if (window.primaryDomain) {
+        return `${window.primaryDomain}`;
+    }
+    if (window.Shopify && window.Shopify.shop) {
+        return `${window.location.host}`;
+    }
+
+    throw new Error('Missing primary domain for Bold Subscriptions Javascript library. To resolve this issue define the window variable primaryDomain (e.g. yourstore.com) before executing this code.');
 }
 
 function getShopifyHandleFromDomain(myshopifyDomain) {
@@ -23,6 +34,7 @@ function removeProductDescriptionsFromCart(cartJSON) {
 
 export {
     getShopifyDomain,
+    getPrimaryDomain,
     getShopifyHandleFromDomain,
     removeProductDescriptionsFromCart,
 };

@@ -1,4 +1,4 @@
-import { getShopifyDomain, getShopifyHandleFromDomain } from '../helpers';
+import { getShopifyDomain, getPrimaryDomain, getShopifyHandleFromDomain } from '../helpers';
 import { default as I } from '../Validator';
 import { removeProductDescriptionsFromCart } from '../helpers';
 
@@ -12,7 +12,7 @@ function goToCheckout(e) {
     const form = target.form;
 
     fetch(
-        `https://${getShopifyDomain()}/cart.json?ts=${Date.now()}`,
+        `https://${getPrimaryDomain()}/cart.json?ts=${Date.now()}`,
         {
             method: 'GET',
             mode: 'cors',
@@ -47,7 +47,7 @@ function goToCheckoutCashier(e) {
     }
 
     fetch(
-        `https://${getShopifyDomain()}/cart.json?ts=${Date.now()}`,
+        `https://${getPrimaryDomain()}/cart.json?ts=${Date.now()}`,
         {
             method: 'GET',
             mode: 'cors',
@@ -61,7 +61,7 @@ function goToCheckoutCashier(e) {
             const cartObj = JSON.stringify(cart);
 
             const cashierForm = document.createElement('FORM');
-            cashierForm.action = `https://${getShopifyDomain()}/apps/checkout/begin-checkout?shop=${getShopifyDomain()}`;
+            cashierForm.action = `https://${getPrimaryDomain()}/apps/checkout/begin-checkout?shop=${getShopifyDomain()}`;
             cashierForm.method = 'POST';
             cashierForm.enctype = 'multipart/form-data';
 

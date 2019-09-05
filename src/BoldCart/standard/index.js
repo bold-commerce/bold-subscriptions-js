@@ -1,6 +1,6 @@
 import { default as I } from '../../Validator';
 import { STANDARD_SUBSCRIPTION_EXPECTED_OPTIONS, STANDARD_SUBSCRIPTION_CHECKOUT_EXPECTED_OPTIONS } from '../../constants';
-import { getShopifyDomain, getShopifyHandleFromDomain } from '../../helpers';
+import { getShopifyDomain, getPrimaryDomain, getShopifyHandleFromDomain } from '../../helpers';
 
 async function addToCart(options, expectedOptions = STANDARD_SUBSCRIPTION_EXPECTED_OPTIONS) {
     let result = I.expectOptions('addToCart', options, expectedOptions, true);
@@ -12,7 +12,7 @@ async function addToCart(options, expectedOptions = STANDARD_SUBSCRIPTION_EXPECT
         throw result;
     }
 
-    return fetch(`https://${getShopifyDomain()}/cart/add.js`, {
+    return fetch(`https://${getPrimaryDomain()}/cart/add.js`, {
         method: 'POST',
         mode: 'cors',
         cache: 'no-cache',
@@ -80,7 +80,7 @@ function directlyToCheckoutCashier(e, expectedFormData = STANDARD_SUBSCRIPTION_E
     }
 
     fetch(
-        `https://${getShopifyDomain()}/cart/clear.js`,
+        `https://${getPrimaryDomain()}/cart/clear.js`,
         {
             method: 'POST',
             mode: 'cors',
@@ -89,7 +89,7 @@ function directlyToCheckoutCashier(e, expectedFormData = STANDARD_SUBSCRIPTION_E
         }
     )
         .then(() => fetch(
-            `https://${getShopifyDomain()}/cart/add.js`,
+            `https://${getPrimaryDomain()}/cart/add.js`,
             {
                 method: 'POST',
                 mode: 'cors',
@@ -99,7 +99,7 @@ function directlyToCheckoutCashier(e, expectedFormData = STANDARD_SUBSCRIPTION_E
             }
         ))
         .then(() => fetch(
-            `https://${getShopifyDomain()}/cart.json?ts=${Date.now()}`,
+            `https://${getPrimaryDomain()}/cart.json?ts=${Date.now()}`,
             {
                 method: 'GET',
                 mode: 'cors',
@@ -113,7 +113,7 @@ function directlyToCheckoutCashier(e, expectedFormData = STANDARD_SUBSCRIPTION_E
             const cartObj = JSON.stringify(cart);
 
             const cashierForm = document.createElement('FORM');
-            cashierForm.action = `https://${getShopifyDomain()}/apps/checkout/begin-checkout?shop=${getShopifyDomain()}`;
+            cashierForm.action = `https://${getPrimaryDomain()}/apps/checkout/begin-checkout?shop=${getShopifyDomain()}`;
             cashierForm.method = 'POST';
             cashierForm.enctype = 'multipart/form-data';
 
