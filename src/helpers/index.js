@@ -39,11 +39,9 @@ function getBoldSubscriptionsHostname() {
 
     if (window.BoldSubscriptionsBaseUrl) {
         try {
-            console.log(window.BoldSubscriptionsBaseUrl);
             let Url = new URL.parse(window.BoldSubscriptionsBaseUrl);
             return Url.hostname;
         } catch(e) {
-            console.log(e);
             console.warn(`BoldSubscriptionsBaseUrl should include a protocol. Defaulting to "https://${defaultHostname}".`);
             return defaultHostname;
         }
