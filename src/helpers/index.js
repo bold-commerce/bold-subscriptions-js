@@ -1,3 +1,5 @@
+import URL from 'url';
+
 function getShopifyDomain() {
     if (window.myshopifyDomain) {
         return `${window.myshopifyDomain}`;
@@ -32,9 +34,28 @@ function removeProductDescriptionsFromCart(cartJSON) {
     }
 }
 
+function getBoldSubscriptionsHostname() {
+    const defaultHostname = 'ro.boldapps.net';
+
+    if (window.BoldSubscriptionsBaseUrl) {
+        try {
+            console.log(window.BoldSubscriptionsBaseUrl);
+            let Url = new URL.parse(window.BoldSubscriptionsBaseUrl);
+            return Url.hostname;
+        } catch(e) {
+            console.log(e);
+            console.warn(`BoldSubscriptionsBaseUrl should include a protocol. Defaulting to "https://${defaultHostname}".`);
+            return defaultHostname;
+        }
+    }
+
+    return defaultHostname;
+}
+
 export {
     getShopifyDomain,
     getPrimaryDomain,
     getShopifyHandleFromDomain,
     removeProductDescriptionsFromCart,
+    getBoldSubscriptionsHostname,
 };

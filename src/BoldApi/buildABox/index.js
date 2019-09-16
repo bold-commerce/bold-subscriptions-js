@@ -1,4 +1,4 @@
-import { getShopifyDomain } from '../../helpers';
+import { getShopifyDomain, getBoldSubscriptionsHostname } from '../../helpers';
 
 /**
  * @param groupId
@@ -6,7 +6,7 @@ import { getShopifyDomain } from '../../helpers';
  */
 function getSlots(groupId, bid = null) {
     return fetch(
-        `https://ro.boldapps.net/api/widget/group/${groupId}/build_a_box/slots.json?shop=${getShopifyDomain()}${bid?`&bid=${bid}`:''}&ts=${Date.now()}`,
+        `https://${getBoldSubscriptionsHostname()}/api/widget/group/${groupId}/build_a_box/slots.json?shop=${getShopifyDomain()}${bid?`&bid=${bid}`:''}&ts=${Date.now()}`,
         {
             method: 'GET',
             mode: 'cors',

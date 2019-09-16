@@ -1,11 +1,11 @@
-import { getShopifyDomain } from '../../helpers';
+import { getShopifyDomain, getBoldSubscriptionsHostname } from '../../helpers';
 
 /**
  * @param groupId
  */
 function getGroupInfo(groupId) {
     return fetch(
-        `https://ro.boldapps.net/api/widget/group/${groupId}.json?shop=${getShopifyDomain()}&ts=${Date.now()}`,
+        `https://${getBoldSubscriptionsHostname()}/api/widget/group/${groupId}.json?shop=${getShopifyDomain()}&ts=${Date.now()}`,
         {
             method: 'GET',
             mode: 'cors',
