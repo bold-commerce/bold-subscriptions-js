@@ -6,7 +6,7 @@ import { getShopifyDomain, getBoldSubscriptionsHostname } from '../../helpers';
  */
 function getSlots(groupId, bid = null) {
     return fetch(
-        `https://${getBoldSubscriptionsHostname()}/api/widget/group/${groupId}/build_a_box/slots.json?shop=${getShopifyDomain()}${bid?`&bid=${bid}`:''}&ts=${Date.now()}`,
+        `https://${getBoldSubscriptionsHostname()}/api/widget/group/${groupId}/build_a_box/slots?shop=${getShopifyDomain()}${bid?`&bid=${bid}`:''}&ts=${Date.now()}`,
         {
             method: 'GET',
             mode: 'cors',
