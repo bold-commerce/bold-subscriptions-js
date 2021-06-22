@@ -1,5 +1,7 @@
 # BoldSubscriptions.js
 
+> :warning: This package is meant for Bold Subscriptions v1 which is no longer installable and has been replaced by Bold Subscriptions v2. See the [Bold Developer Portal](https://developer.boldcommerce.com/) for the latest developer documentation.
+
 ## About
 
 Use these Javascript APIs to easily build custom subscription flows, add subscriptions to the cart and navigate to the Bold Subscriptions or Cashier checkout. The available methods are a fast alternative to and largely based off of our [Custom Subscription Flow](https://docs.boldapps.net/subscriptions/storefront#custom-subscription-flow) and [Widget API](https://docs.boldapps.net/subscriptions/storefront#widget-api) documentation. Included with these API methods are detailed exceptions and error messages to help you quickly and reliably develop custom subscription flows.
